@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ── Primary SEO ─────────────────────────────────────────────── -->
+  <title>Chronicle — Screen Time Tracker, Website Blocker & Focus Timer for Chrome</title>
+  <meta name="description" content="Chronicle is a private, free screen time tracker and website blocker for Chrome. Focus timer, smart categories, daily goals & weekly insights — 100% local, no account." />
+  <link rel="canonical" href="https://kushal-kothari.github.io/chronicle/" />
+  <meta name="theme-color" content="#0A84FF" />
+  <meta name="author" content="Kushal Kothari" />
+  <meta name="keywords" content="screen time tracker, website blocker, time tracker, focus timer, pomodoro, productivity, digital wellbeing, chrome extension, private, open source" />
+  <link rel="icon" type="image/png" href="./icon.png" />
+  <link rel="apple-touch-icon" href="./icon.png" />
+
+  <!-- ── Open Graph ──────────────────────────────────────────────── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Chronicle" />
+  <meta property="og:title" content="Chronicle — Screen Time Tracker & Website Blocker for Chrome" />
+  <meta property="og:description" content="See exactly where your time goes — then take it back. A private, free Chrome extension. 100% local, no account." />
+  <meta property="og:url" content="https://kushal-kothari.github.io/chronicle/" />
+  <meta property="og:image" content="https://kushal-kothari.github.io/chronicle/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- ── Twitter Card ────────────────────────────────────────────── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chronicle — Screen Time Tracker & Website Blocker for Chrome" />
+  <meta name="twitter:description" content="See exactly where your time goes — then take it back. Private, free, 100% local." />
+  <meta name="twitter:image" content="https://kushal-kothari.github.io/chronicle/og-image.png" />
+
+  <!-- ── Structured data (schema.org SoftwareApplication) ────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Chronicle — Screen Time Tracker, Website Blocker & Focus Timer",
+    "operatingSystem": "Chrome",
+    "applicationCategory": "BrowserApplication",
+    "description": "A private, free screen time tracker and website blocker for Chrome with a focus timer, smart categories, daily goals and weekly insights. All data is stored locally.",
+    "url": "https://kushal-kothari.github.io/chronicle/",
+    "downloadUrl": "https://chromewebstore.google.com/detail/eeokdpffdghjcgkipjkajoldffiijdfi",
+    "softwareVersion": "3.0.0",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "Kushal Kothari" },
+    "applicationSubCategory": "Productivity"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- ── Nav ─────────────────────────────────────────────────────── -->
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="./">
+        <img src="./icon.png" width="28" height="28" alt="Chronicle logo" />
+        <span>Chronicle</span>
+      </a>
+      <nav class="nav__links">
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://github.com/Kushal-kothari/chronicle" rel="noopener">GitHub</a>
+      </nav>
+      <a class="btn btn--primary btn--sm" href="https://chromewebstore.google.com/detail/eeokdpffdghjcgkipjkajoldffiijdfi" rel="noopener">Add to Chrome</a>
+    </div>
+  </header>
+
+  <!-- ── Hero ────────────────────────────────────────────────────── -->
+  <main>
+    <section class="hero">
+      <div class="wrap hero__inner">
+        <p class="eyebrow">Free · Open source · 100% private</p>
+        <h1>Know where your time goes. Own it.</h1>
+        <p class="lede">
+          Chronicle is a private <strong>screen time tracker</strong> and <strong>website blocker</strong> for
+          Chrome — with a focus timer, smart categories, daily goals and weekly insights.
+          Everything stays on your device. No account, ever.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary btn--lg" href="https://chromewebstore.google.com/detail/eeokdpffdghjcgkipjkajoldffiijdfi" rel="noopener">Add to Chrome — it's free</a>
+          <a class="btn btn--ghost btn--lg" href="#features">See features</a>
+        </div>
+        <p class="hero__note">Works offline · No sign-up · Uninstall deletes everything</p>
+      </div>
+    </section>
+
+    <!-- ── Features ──────────────────────────────────────────────── -->
+    <section id="features" class="section">
+      <div class="wrap">
+        <p class="text-caption2 center">Features</p>
+        <h2 class="center">Not just how long — on what, and why.</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="card__icon">⏱</div>
+            <h3>Automatic screen time tracking</h3>
+            <p>Browse normally. Chronicle tracks time on every site in the background — switches with your tabs, pauses when you go idle.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🚫</div>
+            <h3>Website blocker & daily limits</h3>
+            <p>Set a daily limit per site. Hit it and the page is blocked — with a five-minute defer when you genuinely need it.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🍅</div>
+            <h3>Focus timer & Pomodoro</h3>
+            <p>Start a 25/45/60/90-minute focus session, name the work, rate it after. Build a log of your real deep work.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🗂</div>
+            <h3>Smart categories</h3>
+            <p>Sites auto-sort into Work, Learning, Social, Entertainment and News. Override once; it sticks.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🎯</div>
+            <h3>Daily goals</h3>
+            <p>"Under 2h on Social." "At least 1h Learning." A live ring tracks progress and nudges you before you cross the line.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">📊</div>
+            <h3>Weekly insights & CSV export</h3>
+            <p>A plain-language weekly digest, a full dashboard with charts, and one-click CSV export of any date range.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Privacy ───────────────────────────────────────────────── -->
+    <section id="privacy" class="section section--tint">
+      <div class="wrap privacy">
+        <p class="text-caption2 center">Privacy</p>
+        <h2 class="center">Your browsing data never leaves your device.</h2>
+        <ul class="checks">
+          <li>All data stored locally with Chrome's storage API — on your device only</li>
+          <li>No analytics SDKs, no ad trackers, no telemetry of any kind</li>
+          <li>No account, no login, no server</li>
+          <li>Uninstalling deletes everything</li>
+          <li>Fully open source — <a href="https://github.com/Kushal-kothari/chronicle" rel="noopener">read every line</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── FAQ ───────────────────────────────────────────────────── -->
+    <section id="faq" class="section">
+      <div class="wrap faq">
+        <p class="text-caption2 center">FAQ</p>
+        <h2 class="center">Questions</h2>
+        <details>
+          <summary>Is Chronicle really free?</summary>
+          <p>Yes — completely free and open source under the MIT license. No paid tier, no ads.</p>
+        </details>
+        <details>
+          <summary>Where is my data stored?</summary>
+          <p>Only in your browser, using Chrome's local storage. Nothing is uploaded anywhere, and there's no account to create.</p>
+        </details>
+        <details>
+          <summary>Does it work as a website blocker?</summary>
+          <p>Yes. Set a daily time limit per site; once reached, Chronicle blocks the page. You can also block sites outright.</p>
+        </details>
+        <details>
+          <summary>Is there a Pomodoro / focus timer?</summary>
+          <p>Yes — start focus sessions of 25/45/60/90 minutes (or open-ended) and run classic Pomodoro work/break cycles.</p>
+        </details>
+        <details>
+          <summary>Can I export my data?</summary>
+          <p>Yes — export any date range to CSV from the dashboard, and back up or restore all data.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ── Final CTA ─────────────────────────────────────────────── -->
+    <section class="cta">
+      <div class="wrap center">
+        <h2>See where your time really goes.</h2>
+        <a class="btn btn--primary btn--lg" href="https://chromewebstore.google.com/detail/eeokdpffdghjcgkipjkajoldffiijdfi" rel="noopener">Add Chronicle to Chrome</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span>© <span id="year">2026</span> Chronicle · MIT licensed</span>
+      <nav>
+        <a href="https://chromewebstore.google.com/detail/eeokdpffdghjcgkipjkajoldffiijdfi" rel="noopener">Chrome Web Store</a>
+        <a href="https://github.com/Kushal-kothari/chronicle" rel="noopener">GitHub</a>
+        <a href="https://github.com/Kushal-kothari/chronicle/blob/main/PRIVACY.md" rel="noopener">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
