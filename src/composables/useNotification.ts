@@ -4,6 +4,7 @@ import { SECOND } from '../utils/time';
 export enum NotificationType {
   DailySummaryNotification = 'daily-summary-notification',
   WebSiteNotification = 'website-notification',
+  FocusComplete = 'focus-complete',
 }
 
 export async function useNotification(

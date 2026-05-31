@@ -7,7 +7,12 @@ import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite';
 import copy from 'rollup-plugin-copy';
 
 const APP_ID = {
-  chrome: 'hhfnghjdeddcfegfekjeihfmbjenlomm',
+  // Published Chrome Web Store listing ID for Chronicle (confirmed via the
+  // developer-analytics property eeokdpffdghjcgkipjkajoldffiijdfi). The previous
+  // value (hhfnghjdeddcfegfekjeihfmbjenlomm) was the UPSTREAM "Web Activity Time
+  // Tracker" listing this project was forked from — review/support links must
+  // point at Chronicle, not the original.
+  chrome: 'eeokdpffdghjcgkipjkajoldffiijdfi',
   edge: 'eepmlmdenlkkjieghjmedjahpofieogf',
 };
 const browser = process.env.TARGET || 'chrome';

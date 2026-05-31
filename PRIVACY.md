@@ -23,6 +23,8 @@ All data is stored **exclusively on your local device** using Chrome's built-in 
 
 We do not sell, share, transfer, or disclose your data to any third party under any circumstances. There are no third-party analytics, advertising SDKs, or tracking tools included in Chronicle.
 
+> **Note on Chrome Web Store statistics:** Like every extension, Chronicle's *store listing page* is covered by Google's own aggregate analytics, which Google provides to developers (anonymous install counts, listing impressions, country totals). This is a function of the Chrome Web Store itself and is entirely separate from the extension — Chronicle's code contains no analytics and transmits nothing from your browser.
+
 ## Data Retention
 
 Data is retained locally until you choose to delete it. You can clear all data at any time from the Settings page inside Chronicle. Uninstalling the extension removes all stored data from your device.

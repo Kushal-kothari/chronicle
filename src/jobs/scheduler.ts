@@ -5,12 +5,15 @@ import { DAY_MINUTES, SECOND, getNextTimeOfDay } from '../utils/time';
 import { Settings } from '../services/settings';
 import { dailySummaryNotification } from './daily-notification';
 import { removeOldTimeIntervals } from './cleanup';
+import { checkGoalAlerts } from './goal-alerts';
+import { FOCUS_COMPLETE_ALARM, notifyFocusComplete } from '../composables/useFocusSessions';
 import { startOfTomorrow } from 'date-fns';
 import { Messages } from '../utils/messages';
 
 export enum JobId {
   DailySummaryNotification = '@alarm/daily-summary-notification',
   RemoveOldTimeIntervals = '@alarm/remove-old-time-intervals',
+  GoalCheck = '@alarm/goal-check',
 }
 
 export function scheduleJobs(): void {
@@ -23,6 +26,14 @@ export function scheduleJobs(): void {
       }
       case JobId.RemoveOldTimeIntervals: {
         await removeOldTimeIntervals();
+        break;
+      }
+      case JobId.GoalCheck: {
+        await checkGoalAlerts();
+        break;
+      }
+      case FOCUS_COMPLETE_ALARM: {
+        await notifyFocusComplete();
         break;
       }
     }
@@ -52,6 +63,12 @@ async function rescheduleJobs(): Promise<void> {
   await createAlarmIfMissing(JobId.RemoveOldTimeIntervals, {
     when: startOfTomorrow().getTime(),
     periodInMinutes: DAY_MINUTES,
+  });
+
+  // Poll goal progress once a minute to alert on limits hit / minimums reached.
+  await createAlarmIfMissing(JobId.GoalCheck, {
+    when: Date.now() + 60 * SECOND,
+    periodInMinutes: 1,
   });
 }
 

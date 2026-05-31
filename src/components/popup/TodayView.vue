@@ -13,6 +13,9 @@
       </div>
     </div>
 
+    <!-- Review prompt (only shown to engaged users; self-gates) -->
+    <ReviewPrompt />
+
     <!-- Category rings -->
     <div v-if="!isLoading && hasCategoryData" class="card mx-3 mb-3 p-4">
       <CategoryRingGroup :category-seconds="categorySeconds" />
@@ -75,6 +78,7 @@ import TimelineStrip from '../ui/TimelineStrip.vue';
 import CategoryRingGroup from '../ui/CategoryRingGroup.vue';
 import SiteRow from '../ui/SiteRow.vue';
 import InsightCard from '../ui/InsightCard.vue';
+import ReviewPrompt from '../ui/ReviewPrompt.vue';
 import { injectTabsRepository } from '../../repository/inject-tabs-repository';
 import { SortingBy } from '../../utils/enums';
 import { todayLocalDate } from '../../utils/date';

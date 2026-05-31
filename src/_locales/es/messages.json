@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Web Activity Time Tracker - Sitios bloqueados, Pomodoro y análisis web"
+    "message": "Chronicle — Tiempo de pantalla, bloqueador web y temporizador de enfoque"
   },
   "extDescription": {
-    "message": "Controla el tiempo de tu actividad web, limita y bloquea los sitios web que te distraen. Monitoriza tu uso de la web."
+    "message": "Controla tu tiempo de pantalla y bloquea webs que distraen: temporizador de enfoque, metas diarias y estadísticas semanales. 100% privado."
   },
   "settings": {
     "message": "Ajustes"
@@ -256,14 +256,10 @@
     "message": "formulario de asistencia"
   },
   "doYouEnjoy": {
-    "message": "¿Te gusta Web Activity Time Tracker?"
+    "message": "¿Te gusta Chronicle?"
   },
   "review": {
     "message": "Deja tu opinión"
-  },
-  "promoClearYoutube": {
-    "message": "¿Te gustaría bloquear los cortos, los comentarios, los vídeos recomendados, las suscripciones y otras distracciones de YouTube? Hemos creado otra extensión que te ayudará a ver YouTube sin distracciones.",
-    "description": "Prueba Clean YouTube"
   },
   "block": {
     "message": "Has alcanzado tu límite por hoy en"
@@ -287,8 +283,8 @@
     "message": "Este es un gráfico del tiempo durante el día por horas"
   },
   "enjoyAndReview": {
-    "message": "¿Disfrutando de la ampliación?",
-    "description": "Valora Web Activity Time Tracker"
+    "message": "¿Te gusta Chronicle?",
+    "description": "Valora Chronicle"
   },
   "removeAllData": {
     "message": "Eliminar todos los datos",
@@ -314,8 +310,8 @@
     "message": "Restaurar"
   },
   "welcome": {
-    "message": "Bienvenido a Web Activity Time Tracker",
-    "description": "Web Activity Time Tracker es una extensión de código abierto, gratuita y sin publicidad, que puede ayudarte a controlar el tiempo que pasas navegando por páginas web y el recuento de visitas."
+    "message": "Te damos la bienvenida a Chronicle",
+    "description": "Chronicle es una extensión privada, gratuita y de código abierto que te ayuda a ver en qué se va tu tiempo y a recuperar tu atención."
   },
   "getStarted": {
     "message": "Empezar"
@@ -367,65 +363,13 @@
     "message": "Completamente bloqueado",
     "description": "Completamente bloqueado"
   },
-  "tryMyOtherApps": {
-    "message": "Pruebe mis otras aplicaciones"
-  },
-  "clearYoutube": {
-    "message": "Clean YouTube",
-    "description": "Extensión de Chrome que puede ocultar los cortos de YouTube, los vídeos recomendados, los comentarios, el feed, las recomendaciones de la página de inicio y otras distracciones. Vea YouTube sin distracciones."
-  },
   "darkTheme": {
     "message": "Tema oscuro"
-  },
-  "cleanYoutube_promo": {
-    "message": "Prueba nuestra nueva extensión Clean Youtube"
-  },
-  "cleanYoutube_description": {
-    "message": "Te gustaría ocultar cortos, vídeos recomendados, comentarios en YouTube?"
-  },
-  "cleanYoutube_description2": {
-    "message": "Clean Youtube es un bloqueador de contenido de YouTube™."
-  },
-  "cleanYoutube_features": {
-    "message": "Nuestras características:"
-  },
-  "cleanYoutube_features1": {
-    "message": "Modo Limpio - Muestra sólo el reproductor de vídeo en la página"
-  },
-  "cleanYoutube_features2": {
-    "message": "Ocultar cortos, comentarios, vídeos relacionados. Más de 15 opciones."
-  },
-  "cleanYoutube_features3": {
-    "message": "Desactivar reproducción automática"
-  },
-  "cleanYoutube_features4": {
-    "message": "Desactivar tarjetas de fin de pantalla"
-  },
-  "cleanYoutube_features5": {
-    "message": "Modo Blanco y Negro"
   },
   "try": {
     "message": "Pruebe"
   },
-  "donate":{
-    "message": "Donación"
-  },
-  "enjoy":{
-    "message": "¿Te gusta Web Activity Time Tracker?"
-  },
-  "canDonate":{
-    "message": "Web Activity Time Tracker es una extensión gratuita. Usted me puede apoyar para el desarrollo futuro con cryptocurrency."
-  },
-  "thanks":{
+  "thanks": {
     "message": "Muchas gracias! 🙏"
-  },
-  "coin":{
-    "message": "Moneda"
-  },
-  "chain":{
-    "message": "Cadena"
-  },
-  "address":{
-    "message": "Dirección"
   }
 }

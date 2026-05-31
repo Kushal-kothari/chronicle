@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Chronicle — Attention Tracker"
+    "message": "Chronicle — Screen Time Tracker, Website Blocker & Focus Timer"
   },
   "extDescription": {
-    "message": "Track web activity with smart categories, goals, focus sessions, and weekly insights. Take control of your attention."
+    "message": "Screen time tracker & website blocker with focus timer, smart categories, daily goals & weekly insights. 100% private — all local."
   },
   "settings": {
     "message": "Settings"
@@ -256,14 +256,10 @@
     "message": "support form"
   },
   "doYouEnjoy": {
-    "message": "Do you enjoy Web Activity Time Tracker?"
+    "message": "Enjoying Chronicle?"
   },
   "review": {
     "message": "Leave a review!"
-  },
-  "promoClearYoutube": {
-    "message": "Would you like to block shorts, comments, recommended videos, subscriptions, and other YouTube distractions? We've created another extension that will help you watch YouTube without distractions.",
-    "description": "Try Clean Youtube"
   },
   "block": {
     "message": "You've reached your limit for today on "
@@ -287,8 +283,8 @@
     "message": "This is a chart of time during the day by the hour"
   },
   "enjoyAndReview": {
-    "message": "Enjoying the extension?",
-    "description": "Rate Web Activity Time Tracker"
+    "message": "Enjoying Chronicle?",
+    "description": "Rate Chronicle"
   },
   "removeAllData": {
     "message": "Remove all data",
@@ -314,8 +310,8 @@
     "message": "Restore"
   },
   "welcome": {
-    "message": "Welcome to Web Activity Time Tracker",
-    "description": "Web Activity Time Tracker is <b>open-source</b>, <b>free</b> and <b>no ads</b> extension, which can help you track the time you spent on browsing websites and the count of visit."
+    "message": "Welcome to Chronicle",
+    "description": "Chronicle is a <b>private</b>, <b>free</b> and <b>open-source</b> extension that helps you see where your time goes and take back your attention."
   },
   "getStarted": {
     "message": "Get started"
@@ -367,65 +363,13 @@
     "message": "Completely Blocked",
     "description": "Completely Block"
   },
-  "tryMyOtherApps": {
-    "message": "Try my other apps"
-  },
-  "clearYoutube": {
-    "message": "Clean YouTube",
-    "description": "Chrome extension that can hide YouTube shorts, recomended videos, comments, feed, homepage recommendations and other distractions. Watch YouTube free of distractions."
-  },
   "darkTheme": {
     "message": "Dark theme"
-  },
-  "cleanYoutube_promo": {
-    "message": "Try our new extension Clean Youtube"
-  },
-  "cleanYoutube_description": {
-    "message": "Would you like to hide shorts, recommended videos, comments on YouTube?"
-  },
-  "cleanYoutube_description2": {
-    "message": "Clean Youtube is a YouTube™ content blocker."
-  },
-  "cleanYoutube_features": {
-    "message": "Our features:"
-  },
-  "cleanYoutube_features1": {
-    "message": "Clean Mode - Show only Video Player on Page"
-  },
-  "cleanYoutube_features2": {
-    "message": "Hide Shorts, Comments, Related Videos. 15+ options."
-  },
-  "cleanYoutube_features3": {
-    "message": "Disable AutoPlay"
-  },
-  "cleanYoutube_features4": {
-    "message": "Disable End Screen Cards"
-  },
-  "cleanYoutube_features5": {
-    "message": "Black and White Mode"
   },
   "try": {
     "message": "Try"
   },
-  "donate": {
-    "message": "Donate"
-  },
-  "enjoy":{
-    "message": "Do you enjoy Web Activity Time Tracker?"
-  },
-  "canDonate":{
-    "message": "Web Activity Time Tracker is free extension. You can support me for the further development with cryptocurrency."
-  },
-  "thanks":{
+  "thanks": {
     "message": "Thank you! 🙏"
-  },
-  "coin":{
-    "message": "Coin"
-  },
-  "chain":{
-    "message": "Chain"
-  },
-  "address":{
-    "message": "Address"
   }
 }

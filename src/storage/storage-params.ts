@@ -31,6 +31,10 @@ export enum StorageParams {
   FOCUS_SESSIONS = 'chronicle_focus_sessions',
   ACTIVE_FOCUS_SESSION = 'chronicle_active_focus_session',
   FLOW_SESSIONS = 'chronicle_flow_sessions',
+  REVIEW_PROMPT_STATE = 'chronicle_review_prompt',
+  ONBOARDING_COMPLETE = 'chronicle_onboarding_complete',
+  FOCUS_GOAL_ALERTS = 'chronicle_focus_goal_alerts',
+  GOAL_ALERT_STATE = 'chronicle_goal_alert_state',
 }
 
 export enum StorageDeserializeParam {
@@ -66,6 +70,7 @@ export const NOTIFICATION_MESSAGE_DEFAULT = 'You have spent a lot of time on thi
 export const INTERVAL_INACTIVITY_DEFAULT = InactivityInterval.Seconds_30;
 export const INTERVAL_SAVE_STORAGE_DEFAULT = 5000;
 export const DARK_MODE_DEFAULT = false;
+export const FOCUS_GOAL_ALERTS_DEFAULT = true;
 export const VIEW_TIME_IN_BADGE_DEFAULT = true;
 export const BLOCK_DEFERRAL_DEFAULT = true;
 export const SHOW_HINT_DEFAULT = true;
@@ -118,6 +123,14 @@ export function getDefaultValue(param: StorageParams) {
       return null;
     case StorageParams.FLOW_SESSIONS:
       return [];
+    case StorageParams.REVIEW_PROMPT_STATE:
+      return { status: 'pending' };
+    case StorageParams.ONBOARDING_COMPLETE:
+      return false;
+    case StorageParams.FOCUS_GOAL_ALERTS:
+      return FOCUS_GOAL_ALERTS_DEFAULT;
+    case StorageParams.GOAL_ALERT_STATE:
+      return {};
     case StorageParams.IS_POMODORO_ENABLED:
       return IS_POMODORO_ENABLED_DEFAULT;
     case StorageParams.POMODORO_INTERVAL_WORK:

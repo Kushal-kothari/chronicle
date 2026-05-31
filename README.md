@@ -6,11 +6,11 @@
 
 **Know where your time goes. Own it.**
 
-A privacy-first Chrome extension that tracks your web activity with smart categories, daily goals, focus sessions, and weekly insights — all stored locally, nothing ever leaves your device.
+A privacy-first **screen time tracker and website blocker** for Chrome — with a focus timer, smart categories, daily goals, and weekly insights. All data is stored locally; nothing ever leaves your device.
 
 <br />
 
-[![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Available-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Install-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/eeokdpffdghjcgkipjkajoldffiijdfi)
 [![Version](https://img.shields.io/badge/version-3.0.0-0A84FF?style=flat-square)](https://github.com/Kushal-kothari/chronicle/releases)
 [![License](https://img.shields.io/badge/license-MIT-30D158?style=flat-square)](LICENSE)
 [![Privacy](https://img.shields.io/badge/data-100%25_local-FF9F0A?style=flat-square)](#privacy)
@@ -134,6 +134,8 @@ Chronicle is built on a simple principle: **your browsing data belongs to you.**
 - No account, no login, no server
 - Uninstalling the extension deletes all data
 - The source code is fully open — read every line
+
+> Chronicle's code ships **no analytics or telemetry**. The only usage data that exists is Google's own aggregate Chrome Web Store listing statistics (install counts, impressions), which the Store provides to every developer and which never touch your browser. See [PRIVACY.md](PRIVACY.md).
 
 ---
 

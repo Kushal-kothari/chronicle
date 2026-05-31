@@ -108,7 +108,7 @@
           </div>
         </div>
         <div class="pin-hint">
-          Click the <strong>puzzle piece icon</strong> in your Chrome toolbar to get started
+          No rush — Chronicle is <strong>already tracking</strong>. Pinning just keeps your stats one click away.
         </div>
       </div>
 
@@ -143,7 +143,7 @@
                 <line x1="13" y1="2" x2="13" y2="6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
               </svg>
             </div>
-            <p>Browse normally today and check back — your data will be waiting.</p>
+            <p>Browse normally today, then come back tomorrow to see your first full day mapped out.</p>
           </div>
           <div class="ready-card">
             <div class="ready-card-icon ready-card-icon--green">
@@ -168,21 +168,30 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
 import Browser from 'webextension-polyfill';
+import { injectStorage } from '../storage/inject-storage';
+import { StorageParams, DARK_MODE_DEFAULT } from '../storage/storage-params';
 
 const step = ref(0);
 const isDark = ref(false);
 
 onMounted(async () => {
-  const result = await Browser.storage.local.get('darkMode');
-  isDark.value = !!result.darkMode;
+  // dark mode is stored under StorageParams.DARK_MODE ('night_mode'), not 'darkMode'
+  isDark.value = await injectStorage().getValue(StorageParams.DARK_MODE, DARK_MODE_DEFAULT);
 });
 
+/** Mark first-run as finished so we can avoid re-showing onboarding later. */
+async function completeOnboarding() {
+  await injectStorage().saveValue(StorageParams.ONBOARDING_COMPLETE, true);
+}
+
 async function closeTab() {
+  await completeOnboarding();
   const currentTab = await Browser.tabs.getCurrent();
   await Browser.tabs.remove(currentTab.id!);
 }
 
 async function openDashboard() {
+  await completeOnboarding();
   const url = Browser.runtime.getURL('src/dashboard.html');
   const tabs = await Browser.tabs.query({ currentWindow: true, active: true });
   Browser.tabs.update(tabs[0].id, { url });

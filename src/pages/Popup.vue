@@ -60,19 +60,12 @@ import FocusView from '../components/popup/FocusView.vue';
 import GoalsView from '../components/popup/GoalsView.vue';
 import { openPage } from '../utils/open-page';
 import { SettingsTab } from '../utils/enums';
-import { injectStorage } from '../storage/inject-storage';
-import { DARK_MODE_DEFAULT, StorageParams } from '../storage/storage-params';
-
-function applyTheme(dark: boolean) {
-  document.documentElement.classList.toggle('dark', dark);
-  document.body.classList.toggle('dark', dark);
-}
+import { useDarkMode } from '../composables/useDarkMode';
 
 type TabId = 'today' | 'focus' | 'goals';
 
 const activeTab = ref<TabId>('today');
-const isDark = ref(false);
-const storage = injectStorage();
+const { isDark, load: loadDarkMode, toggle: toggleDark } = useDarkMode();
 
 const navTabs: Array<{ id: TabId; label: string; icon: string }> = [
   {
@@ -98,20 +91,11 @@ const navTabs: Array<{ id: TabId; label: string; icon: string }> = [
   },
 ];
 
-async function toggleDark() {
-  isDark.value = !isDark.value;
-  applyTheme(isDark.value);
-  await storage.saveValue(StorageParams.DARK_MODE, isDark.value);
-}
-
 function openDashboard() {
   openPage(SettingsTab.Dashboard);
 }
 
-onMounted(async () => {
-  isDark.value = await storage.getValue(StorageParams.DARK_MODE, DARK_MODE_DEFAULT);
-  applyTheme(isDark.value);
-});
+onMounted(loadDarkMode);
 </script>
 
 <style scoped>

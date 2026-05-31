@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "ウェブ活動時間トラッカー - ブロックウェブサイト,ポモドーロ＆ウ:ェブ分析"
+    "message": "Chronicle — スクリーンタイム・サイトブロック・集中タイマー"
   },
   "extDescription": {
-    "message": "あなたのウェブ活動の時間を追跡し,制限し,気が散るウェブサイトをブロックします。あなたのウェブ利用を監視します。"
+    "message": "スクリーンタイム計測とサイトブロック、集中タイマー、自動カテゴリ、毎日の目標、週間レポート。データは100%端末内に保存。"
   },
   "settings": {
     "message": "設定"
@@ -256,14 +256,10 @@
     "message": "サポートフォーム"
   },
   "doYouEnjoy": {
-    "message": "Web Activity Time Trackerを楽しんでいますか？"
+    "message": "Chronicleは気に入りましたか？"
   },
   "review": {
     "message": "レビューを書く"
-  },
-  "promoClearYoutube": {
-    "message": "ショートフィルム,コメント,おすすめ動画,購読,その他のYouTubeの邪魔なものをブロックしたいですか？気晴らしにYouTubeを見るのに役立つ別の拡張機能を作りました。",
-    "description": "クリーンユーチューブを試す"
   },
   "block": {
     "message": "で今日の制限に達した。"
@@ -314,8 +310,8 @@
     "message": "リストア"
   },
   "welcome": {
-    "message": "Web Activity Time Trackerへようこそ",
-    "description": "Web Activity Time Trackerは、オープンソース、<b>無料</b>、<b>広告なし</b>の拡張機能で、ウェブサイトの閲覧に費やした時間や訪問回数を記録することができます。"
+    "message": "Chronicle へようこそ",
+    "description": "Chronicle は<b>プライベート</b>・<b>無料</b>・<b>オープンソース</b>の拡張機能です。時間の使い道を可視化し、集中力を取り戻す手助けをします。"
   },
   "getStarted": {
     "message": "スタート"
@@ -367,65 +363,13 @@
     "message": "完全にブロックされました,",
     "description": "完全にブロック"
   },
-  "tryMyOtherApps": {
-    "message": "他のアプリを試す"
-  },
-  "clearYoutube": {
-    "message": "YouTubeをクリーン",
-    "description": "YouTubeのショートムービー,おすすめビデオ,コメント,フィード,ホームページのおすすめやその他の邪魔なものを隠すことができるChrome拡張機能です。気晴らしにYouTubeを見よう。"
-  },
   "darkTheme": {
     "message": "ダークテーマ"
-  },
-  "cleanYoutube_promo": {
-    "message": "新しい拡張機能Clean Youtubeをお試しください"
-  },
-  "cleanYoutube_description": {
-    "message": "YouTubeのショートフィルム,おすすめ動画,コメントを非表示にしますか？"
-  },
-  "cleanYoutube_description2": {
-    "message": "クリーンYoutubeはYouTube™コンテンツブロッカーです。"
-  },
-  "cleanYoutube_features": {
-    "message": "私たちの機能:"
-  },
-  "cleanYoutube_features1": {
-    "message": "クリーンモード - ページに動画プレーヤーのみを表示"
-  },
-  "cleanYoutube_features2": {
-    "message": "ショートカット、コメント、関連ビデオを隠す。15以上のオプション"
-  },
-  "cleanYoutube_features3": {
-    "message": "自動再生を無効にする"
-  },
-  "cleanYoutube_features4": {
-    "message": "終了画面カードを無効にする"
-  },
-  "cleanYoutube_features5": {
-    "message": "白黒モード"
   },
   "try": {
     "message": "トライ"
   },
-  "donate": {
-    "message": "寄付する"
-  },
-  "enjoy":{
-    "message": "Web Activity Time Trackerを楽しんでいますか？"
-  },
-  "canDonate":{
-    "message": "Web Activity Time Trackerは無料の拡張機能です。さらなる開発のために、暗号通貨でご支援ください。"
-  },
-  "thanks":{
+  "thanks": {
     "message": "ありがとうございます！ 🙏"
-  },
-  "coin":{
-    "message": "コイン"
-  },
-  "chain":{
-    "message": "チェーン"
-  },
-  "address":{
-    "message": "アドレス"
   }
 }

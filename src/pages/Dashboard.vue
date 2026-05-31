@@ -60,11 +60,7 @@
 
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue';
-
-function applyTheme(dark: boolean) {
-  document.documentElement.classList.toggle('dark', dark);
-  document.body.classList.toggle('dark', dark);
-}
+import { useDarkMode } from '../composables/useDarkMode';
 
 import OverviewPage     from '../components/dashboard/OverviewPage.vue';
 import SitesPage        from '../components/dashboard/SitesPage.vue';
@@ -73,13 +69,10 @@ import GoalsPage        from '../components/dashboard/GoalsPage.vue';
 import FocusLogPage     from '../components/dashboard/FocusLogPage.vue';
 import WeeklyDigestPage from '../components/dashboard/WeeklyDigestPage.vue';
 import SettingsPage     from '../components/dashboard/SettingsPage.vue';
-import { injectStorage } from '../storage/inject-storage';
-import { DARK_MODE_DEFAULT, StorageParams } from '../storage/storage-params';
 
 type PageId = 'overview' | 'sites' | 'categories' | 'goals' | 'focus' | 'digest' | 'settings';
 
-const storage = injectStorage();
-const isDark = ref(false);
+const { isDark, load: loadDarkMode, toggle: toggleDark } = useDarkMode();
 
 // Read initial page from URL ?tab= param
 function getInitialPage(): PageId {
@@ -98,12 +91,6 @@ function navigate(page: PageId) {
   const url = new URL(window.location.href);
   url.searchParams.set('tab', page);
   window.history.replaceState({}, '', url.toString());
-}
-
-async function toggleDark() {
-  isDark.value = !isDark.value;
-  applyTheme(isDark.value);
-  await storage.saveValue(StorageParams.DARK_MODE, isDark.value);
 }
 
 const navItems: Array<{ id: PageId; label: string; icon: string }> = [
@@ -145,10 +132,7 @@ const sunIcon = `<svg width="16" height="16" viewBox="0 0 16 16" fill="currentCo
 
 const moonIcon = `<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M10.5 1.75a6.75 6.75 0 0 1-6.75 6.75 6.747 6.747 0 0 1-1.75-.23 6.753 6.753 0 0 0 6.5 4.98c3.73 0 6.75-3.02 6.75-6.75a6.747 6.747 0 0 0-4.75-6.5v.75z"/></svg>`;
 
-onMounted(async () => {
-  isDark.value = await storage.getValue(StorageParams.DARK_MODE, DARK_MODE_DEFAULT);
-  applyTheme(isDark.value);
-});
+onMounted(loadDarkMode);
 </script>
 
 <style scoped>

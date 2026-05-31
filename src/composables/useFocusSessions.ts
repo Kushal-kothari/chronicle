@@ -1,9 +1,23 @@
+import Browser from 'webextension-polyfill';
 import { FocusSession, getSessionDuration, isSessionActive } from '../types/focus-session';
-import { StorageParams } from '../storage/storage-params';
+import { StorageParams, FOCUS_GOAL_ALERTS_DEFAULT } from '../storage/storage-params';
 import { injectStorage } from '../storage/inject-storage';
+import { playSound, FOCUS_COMPLETE_SOUND } from '../services/sound';
+import { useNotification, NotificationType } from './useNotification';
+
+/** Alarm name for the one-shot "focus session reached its target" wake-up. */
+export const FOCUS_COMPLETE_ALARM = '@alarm/focus-session-complete';
 
 function generateId(): string {
   return `focus_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
+}
+
+/** (Re)schedule the completion alarm for a session that has a target duration. */
+async function scheduleFocusAlarm(session: FocusSession): Promise<void> {
+  await Browser.alarms.clear(FOCUS_COMPLETE_ALARM);
+  if (!session.targetSeconds || session.targetSeconds <= 0) return;
+  const when = new Date(session.startedAt).getTime() + session.targetSeconds * 1000;
+  if (when > Date.now()) await Browser.alarms.create(FOCUS_COMPLETE_ALARM, { when });
 }
 
 export async function getFocusSessions(): Promise<FocusSession[]> {
@@ -38,6 +52,7 @@ export async function startFocusSession(
   };
 
   await saveActiveFocusSession(session);
+  await scheduleFocusAlarm(session);
   return session;
 }
 
@@ -45,6 +60,7 @@ export async function endActiveFocusSession(
   rating?: number,
   note?: string,
 ): Promise<FocusSession | null> {
+  await Browser.alarms.clear(FOCUS_COMPLETE_ALARM);
   const active = await getActiveFocusSession();
   if (!active) return null;
 
@@ -61,6 +77,29 @@ export async function endActiveFocusSession(
   await storage.saveValue(StorageParams.FOCUS_SESSIONS, sessions);
   await saveActiveFocusSession(null);
   return completed;
+}
+
+/**
+ * Called from the background alarm when a session reaches its target time.
+ * Alerts the user (sound + notification) but leaves the session running so they
+ * can still rate it on their own time — going over target is intentional.
+ */
+export async function notifyFocusComplete(): Promise<void> {
+  const active = await getActiveFocusSession();
+  if (!active || !active.targetSeconds) return;
+
+  const alertsOn = await injectStorage().getValue(
+    StorageParams.FOCUS_GOAL_ALERTS,
+    FOCUS_GOAL_ALERTS_DEFAULT,
+  );
+  if (!alertsOn) return;
+
+  await playSound(FOCUS_COMPLETE_SOUND);
+  await useNotification(
+    NotificationType.FocusComplete,
+    'Focus session complete',
+    `Nice work on "${active.name}". Time for a break.`,
+  );
 }
 
 export async function updateActiveFocusSession(updates: Partial<FocusSession>): Promise<void> {

@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Web Activity Time Tracker - 封鎖網站、Pomodoro 與網頁分析"
+    "message": "Chronicle — 屏幕使用时间、网站拦截与专注计时器"
   },
   "extDescription": {
-    "message": "追踪和限制您的网站活动时间，并阻止访问网站。监控您的网站使用情况"
+    "message": "屏幕使用时间追踪与网站拦截：专注计时器、智能分类、每日目标和每周报告。数据 100% 保存在本地，注重隐私。"
   },
   "settings": {
     "message": "设置"
@@ -256,7 +256,7 @@
     "message": "支持表单"
   },
   "doYouEnjoy": {
-    "message": "您喜欢 Web Activity Time Tracker 吗？"
+    "message": "您喜欢 Chronicle 吗？"
   },
   "review": {
     "message": "留下评论吧！"
@@ -284,7 +284,7 @@
   },
   "enjoyAndReview": {
     "message": "喜欢这个扩展程序吗？",
-    "description": "给 Web Activity Time Tracker 评分"
+    "description": "给 Chronicle 评分"
   },
   "removeAllData": {
     "message": "删除所有数据",
@@ -310,8 +310,8 @@
     "message": "恢复"
   },
   "welcome": {
-    "message": "欢迎使用 Web Activity Time Tracker",
-    "description": "Web Activity Time Tracker  是一款<b>开源</b>、<b>免费</b>且<b>无广告</b>的扩展程序，它可以帮助您跟踪在浏览网站上花费的时间和访问次数。"
+    "message": "欢迎使用 Chronicle",
+    "description": "Chronicle 是一款<b>注重隐私</b>、<b>免费</b>且<b>开源</b>的扩展程序，帮助您了解时间花在哪里，重新掌控自己的注意力。"
   },
   "getStarted": {
     "message": "开始使用"
@@ -359,73 +359,17 @@
     "message": "只有时间间隔大于",
     "description": "展示"
   },
-  "promoClearYoutube": {
-    "message": "您想屏蔽短片、评论、推荐视频、订阅和其他 YouTube 干扰内容吗？ 我们创建了另一个扩展程序，可帮助您不受干扰地观看 YouTube",
-    "description": "嘗試 Clean YouTube"
-  },
   "completelyBlocked": {
     "message": "完全封锁",
     "description": "完全封锁"
   },
-  "tryMyOtherApps": {
-    "message": "试试我的其他应用程序"
-  },
-  "clearYoutube": {
-    "message": "Clean YouTube",
-    "description": "Chrome扩展程序，可以隐藏YouTube短片，推荐视频，评论，feed，主页推荐和其他分心。 观看YouTube免费分心。"
-  },
   "darkTheme": {
     "message": "黑暗主题"
-  },
-  "cleanYoutube_promo": {
-    "message": "试试我们的新扩展 Clean Youtube"
-  },
-  "cleanYoutube_description": {
-    "message": "想隐藏 YouTube 上的短片、推荐视频和评论？"
-  },
-  "cleanYoutube_description2": {
-    "message": "Clean Youtube 是一款 YouTube™ 内容拦截器。"
-  },
-  "cleanYoutube_features": {
-    "message": "我们的特色"
-  },
-  "cleanYoutube_features1": {
-    "message": "清洁模式--只显示页面上的视频播放器"
-  },
-  "cleanYoutube_features2": {
-    "message": "隐藏短片、评论和相关视频。15+ 个选项。"
-  },
-  "cleanYoutube_features3": {
-    "message": "禁用自动播放"
-  },
-  "cleanYoutube_features4": {
-    "message": "禁用结束屏幕卡片"
-  },
-  "cleanYoutube_features5": {
-    "message": "黑白模式"
   },
   "try": {
     "message": "试用"
   },
-  "donate":{
-    "message": "捐赠"
-  },
-  "enjoy":{
-    "message": "您喜欢 Web Activity Time Tracker 吗"
-  },
-  "canDonate":{
-    "message": "Web Activity Time Tracker 是永久免费的扩展。您可以使用加密货币支持我进一步开发。"
-  },
-  "thanks":{
+  "thanks": {
     "message": "谢谢！ 🙏"
-  },
-  "coin":{
-    "message": "币"
-  },
-  "chain":{
-    "message": "链"
-  },
-  "address":{
-    "message": "币链地址"
   }
 }

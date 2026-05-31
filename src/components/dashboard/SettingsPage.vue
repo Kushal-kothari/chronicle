@@ -15,7 +15,7 @@
             <p class="setting-desc">Use dark theme across Chronicle</p>
           </div>
           <label class="toggle">
-            <input type="checkbox" v-model="darkMode" @change="saveSetting(StorageParams.DARK_MODE, darkMode)" />
+            <input type="checkbox" v-model="isDark" @change="onDarkModeChange" />
             <div class="toggle-track" />
             <div class="toggle-thumb" />
           </label>
@@ -72,6 +72,18 @@
     <div class="mb-6">
       <p class="section-header mb-3">Notifications</p>
       <div class="list-group">
+        <div class="list-row" style="cursor:default;">
+          <div class="setting-info">
+            <p class="setting-label">Focus &amp; goal alerts</p>
+            <p class="setting-desc">Play a sound and notify when a focus timer ends or a goal is hit</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" v-model="alertsEnabled" @change="saveSetting(StorageParams.FOCUS_GOAL_ALERTS, alertsEnabled)" />
+            <div class="toggle-track" />
+            <div class="toggle-thumb" />
+          </label>
+        </div>
+
         <div class="list-row" style="cursor:default;">
           <div class="setting-info">
             <p class="setting-label">Daily summary</p>
@@ -239,18 +251,21 @@ import {
   INTERVAL_INACTIVITY_DEFAULT,
   DAILY_NOTIFICATION_DEFAULT,
   DAILY_SUMMARY_NOTIFICATION_TIME_DEFAULT,
+  FOCUS_GOAL_ALERTS_DEFAULT,
 } from '../../storage/storage-params';
 import { useFile } from '../../composables/useFile';
 import Browser from 'webextension-polyfill';
 import { Messages } from '../../utils/messages';
+import { useDarkMode } from '../../composables/useDarkMode';
 
 const storage = injectStorage();
 
-const darkMode = ref(false);
+const { isDark, setDark } = useDarkMode();
 const viewTimeInBadge = ref(true);
 const allowDefer = ref(true);
 const inactivityInterval = ref(30);
 const dailyNotification = ref(true);
+const alertsEnabled = ref(true);
 const notificationHour = ref(20 * 3600);
 const blackList = ref<string[]>([]);
 const whiteList = ref<string[]>([]);
@@ -261,11 +276,12 @@ const showImport = ref(false);
 const importInput = ref<HTMLInputElement>();
 
 async function loadSettings() {
-  darkMode.value = await storage.getValue(StorageParams.DARK_MODE, DARK_MODE_DEFAULT);
+  // dark mode is owned by the shared useDarkMode composable (loaded by Dashboard)
   viewTimeInBadge.value = await storage.getValue(StorageParams.VIEW_TIME_IN_BADGE, VIEW_TIME_IN_BADGE_DEFAULT);
   allowDefer.value = await storage.getValue(StorageParams.BLOCK_DEFERRAL, BLOCK_DEFERRAL_DEFAULT);
   inactivityInterval.value = await storage.getValue(StorageParams.INTERVAL_INACTIVITY, INTERVAL_INACTIVITY_DEFAULT);
   dailyNotification.value = await storage.getValue(StorageParams.DAILY_NOTIFICATION, DAILY_NOTIFICATION_DEFAULT);
+  alertsEnabled.value = await storage.getValue(StorageParams.FOCUS_GOAL_ALERTS, FOCUS_GOAL_ALERTS_DEFAULT);
   notificationHour.value = await storage.getValue(StorageParams.DAILY_SUMMARY_NOTIFICATION_TIME, DAILY_SUMMARY_NOTIFICATION_TIME_DEFAULT);
   blackList.value = await storage.getValue(StorageParams.BLACK_LIST, []);
   whiteList.value = await storage.getValue(StorageParams.BLACK_LIST, []);
@@ -276,6 +292,11 @@ async function loadSettings() {
 
 async function saveSetting(param: StorageParams, value: any) {
   await storage.saveValue(param, value);
+}
+
+/** Apply the theme to the document immediately, then persist it. */
+async function onDarkModeChange() {
+  await setDark(isDark.value);
 }
 
 async function saveNotificationTime() {

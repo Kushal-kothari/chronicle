@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Web Activity Time Tracker - Websites sperren, Pomodoro & Webanalyse"
+    "message": "Chronicle — Bildschirmzeit, Website-Blocker & Fokus-Timer"
   },
   "extDescription": {
-    "message": "Verfolgen und begrenzen Sie die Zeit Ihrer Webaktivitäten und blockieren Sie den Zugang zu den Websites."
+    "message": "Bildschirmzeit-Tracker & Website-Blocker mit Fokus-Timer, smarten Kategorien, Tageszielen & Wochenstatistik. 100% privat & lokal."
   },
   "settings": {
     "message": "Einstellungen"
@@ -284,7 +284,7 @@
   },
   "enjoyAndReview": {
     "message": "Gefällt Ihnen diese Erweiterung?",
-    "description": "Web Activity Time Tracker bewerten"
+    "description": "Chronicle bewerten"
   },
   "removeAllData": {
     "message": "Alle Daten entfernen",
@@ -310,8 +310,8 @@
     "message": "Wiederherstellen"
   },
   "welcome": {
-    "message": "Willkommen bei Web Activity Time Tracker",
-    "description": "Web Activity Time Tracker ist eine <b>open-source</b>, <b>kostenlose</b> und <b>werbefreie</b> Erweiterung, mit der Sie die Zeit, die Sie für das Durchsuchen von Websites aufgewendet haben, und die Anzahl der Besuche nachverfolgen können."
+    "message": "Willkommen bei Chronicle",
+    "description": "Chronicle ist eine <b>private</b>, <b>kostenlose</b> und <b>quelloffene</b> Erweiterung, die dir zeigt, wohin deine Zeit fließt – und dir deine Aufmerksamkeit zurückgibt."
   },
   "getStarted": {
     "message": "Anleitung"
@@ -339,7 +339,7 @@
   "close": {
     "message": "Schließen"
   },
-  "useExtension": { 
+  "useExtension": {
     "message": "Verwenden Sie die Erweiterung"
   },
   "next": {
@@ -359,73 +359,17 @@
     "message": "Nur Zeitintervalle größer als",
     "description": "werden angezeigt"
   },
-  "promoClearYoutube": {
-    "message": "Möchten Sie Kurzfilme, Kommentare, empfohlene Videos, Abonnements und andere YouTube-Ablenkungen blockieren? Wir haben eine weitere Erweiterung erstellt, mit der Sie YouTube ohne Ablenkung ansehen können.",
-    "description": "Versuchen Clean YouTube"
-  },
   "completelyBlocked": {
     "message": "Vollständig blockiert",
     "description": "Vollständig blockieren"
   },
-  "tryMyOtherApps": {
-    "message": "Probieren Sie meine anderen Apps aus"
-  },
-  "clearYoutube": {
-    "message": "Clean YouTube",
-    "description": "Chrome-Erweiterung, die YouTube-Shorts, empfohlene Videos, Kommentare, Feeds, Homepage-Empfehlungen und andere Ablenkungen ausblenden kann. Sieh dir YouTube ohne Ablenkungen an."
-  },
   "darkTheme": {
     "message": "Dunkles Thema"
-  },
-  "cleanYoutube_promo": {
-    "message": "Probieren Sie unsere neue Erweiterung Clean Youtube"
-  },
-  "cleanYoutube_description": {
-    "message": "Möchten Sie Kurzfilme, empfohlene Videos und Kommentare auf YouTube ausblenden?"
-  },
-  "cleanYoutube_description2": {
-    "message": "Clean Youtube ist ein YouTube™-Inhaltsblocker."
-  },
-  "cleanYoutube_features": {
-    "message": "Unsere Funktionen:"
-  },
-  "cleanYoutube_features1": {
-    "message": "Clean Mode - Nur Videoplayer auf der Seite anzeigen"
-  },
-  "cleanYoutube_features2": {
-    "message": "Kurze Videos, Kommentare und verwandte Videos ausblenden. 15+ Optionen."
-  },
-  "cleanYoutube_features3": {
-    "message": "AutoPlay deaktivieren"
-  },
-  "cleanYoutube_features4": {
-    "message": "Endscreen-Karten deaktivieren"
-  },
-  "cleanYoutube_features5": {
-    "message": "Schwarz/Weiß-Modus"
   },
   "try": {
     "message": "Testen Sie"
   },
-  "donate":{
-    "message": "Spende"
-  },
-  "enjoy":{
-    "message": "Haben Sie Spaß an Web Activity Time Tracker?"
-  },
-  "canDonate":{
-    "message": "Web Activity Time Tracker ist eine kostenlose Erweiterung. Sie können mich für die weitere Entwicklung mit Kryptowährung unterstützen."
-  },
-  "thanks":{
+  "thanks": {
     "message": "Vielen Dank dafür! 🙏"
-  },
-  "coin":{
-    "message": "Münze"
-  },
-  "chain":{
-    "message": "Kette"
-  },
-  "address":{
-    "message": "Adresse"
   }
 }
