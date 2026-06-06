@@ -14,13 +14,13 @@
 
       <!-- Blocked indicator -->
       <div class="block-icon">🚫</div>
-      <h1 class="block-title">Time limit reached</h1>
+      <h1 class="block-title">{{ isBlocked ? 'Site blocked' : 'Time limit reached' }}</h1>
       <p class="block-site">
         <img v-if="favicon" :src="favicon" height="18" class="site-favicon" />
         <strong>{{ webSite }}</strong>
       </p>
 
-      <div class="stats-row">
+      <div v-if="!isBlocked" class="stats-row">
         <div class="stat">
           <span class="stat-label">Limit</span>
           <span class="stat-value">{{ limitTimeString }}</span>
@@ -33,17 +33,22 @@
       </div>
 
       <p class="block-message">
-        You've used your daily allowance for this site. Come back tomorrow, or adjust your limit in Chronicle.
+        <template v-if="isBlocked">
+          This site is on your block list. Remove it from Chronicle's blocked sites to access it again.
+        </template>
+        <template v-else>
+          You've used your daily allowance for this site. Come back tomorrow, or adjust your limit in Chronicle.
+        </template>
       </p>
 
       <button
-        v-if="allowDeferringBlock && haveToShowDeffering"
+        v-if="!isBlocked && allowDeferringBlock && haveToShowDeffering"
         class="btn-defer"
         @click="deferring()"
       >
         +5 minutes — just this once
       </button>
-      <p v-if="allowDeferringBlock" class="defer-note">You can defer once per day</p>
+      <p v-if="!isBlocked && allowDeferringBlock" class="defer-note">You can defer once per day</p>
     </div>
   </div>
 </template>
@@ -66,6 +71,7 @@ const limitTimeString = ref('');
 const summaryCounter = ref(0);
 const allowDeferringBlock = ref(false);
 const haveToShowDeffering = ref(false);
+const isBlocked = ref(false);
 
 onMounted(async () => {
   const q = getValueFromQuery(location.href);
@@ -75,6 +81,7 @@ onMounted(async () => {
   favicon.value = q.favicon ?? '';
   limitTimeString.value = convertLimitTimeToString(q.limitTime);
   summaryCounter.value = q.summaryCounter ?? 0;
+  isBlocked.value = q.mode === 'blocked';
 
   allowDeferringBlock.value = await settingsStorage.getValue(
     StorageParams.BLOCK_DEFERRAL,

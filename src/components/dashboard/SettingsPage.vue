@@ -257,6 +257,7 @@ import { useFile } from '../../composables/useFile';
 import Browser from 'webextension-polyfill';
 import { Messages } from '../../utils/messages';
 import { useDarkMode } from '../../composables/useDarkMode';
+import { asArray } from '../../utils/common';
 
 const storage = injectStorage();
 
@@ -283,11 +284,10 @@ async function loadSettings() {
   dailyNotification.value = await storage.getValue(StorageParams.DAILY_NOTIFICATION, DAILY_NOTIFICATION_DEFAULT);
   alertsEnabled.value = await storage.getValue(StorageParams.FOCUS_GOAL_ALERTS, FOCUS_GOAL_ALERTS_DEFAULT);
   notificationHour.value = await storage.getValue(StorageParams.DAILY_SUMMARY_NOTIFICATION_TIME, DAILY_SUMMARY_NOTIFICATION_TIME_DEFAULT);
-  blackList.value = await storage.getValue(StorageParams.BLACK_LIST, []);
-  whiteList.value = await storage.getValue(StorageParams.BLACK_LIST, []);
-  // load whitelist from correct param
-  const wl = await storage.getValue('whitelist' as any, []);
-  whiteList.value = wl as string[];
+  // Normalise to arrays — older builds can persist these lists as objects,
+  // which would make .filter / .push throw in the handlers below.
+  blackList.value = asArray<string>(await storage.getValue(StorageParams.BLACK_LIST, []));
+  whiteList.value = asArray<string>(await storage.getValue('whitelist' as any, []));
 }
 
 async function saveSetting(param: StorageParams, value: any) {

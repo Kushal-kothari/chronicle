@@ -4,7 +4,11 @@ export enum BlockParams {
   LimitTime = 'summaryTime',
   SummaryCounter = 'summaryCounter',
   Favicon = 'favicon',
+  Mode = 'mode',
 }
+
+/** How the block page was reached. */
+export type BlockMode = 'limit' | 'blocked';
 
 export function buildBlockQuery(
   domain: string,
@@ -12,8 +16,9 @@ export function buildBlockQuery(
   limitTime: number,
   summaryCounter: number,
   favicon: string,
+  mode: BlockMode = 'limit',
 ) {
-  return `?domain=${domain}&url=${url}&summaryTime=${limitTime}&summaryCounter=${summaryCounter}&favicon=${favicon}`;
+  return `?domain=${domain}&url=${url}&summaryTime=${limitTime}&summaryCounter=${summaryCounter}&favicon=${favicon}&mode=${mode}`;
 }
 
 export function getValueFromQuery(url: string) {
@@ -23,6 +28,7 @@ export function getValueFromQuery(url: string) {
   const favicon = urlObj.searchParams.get(BlockParams.Favicon);
   const limitTime = Number(urlObj.searchParams.get(BlockParams.LimitTime));
   const summaryCounter = Number(urlObj.searchParams.get(BlockParams.SummaryCounter));
+  const mode = (urlObj.searchParams.get(BlockParams.Mode) as BlockMode) ?? 'limit';
 
   return {
     domain: domain,
@@ -30,5 +36,6 @@ export function getValueFromQuery(url: string) {
     limitTime: limitTime,
     summaryCounter: summaryCounter,
     favicon: favicon,
+    mode: mode,
   };
 }

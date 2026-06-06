@@ -129,6 +129,7 @@ import { StorageDeserializeParam, StorageParams } from '../../storage/storage-pa
 import { Tab } from '../../types/tab';
 import { todayLocalDate } from '../../utils/date';
 import { convertSummaryTimeToString } from '../../utils/converter';
+import { asArray } from '../../utils/common';
 import { getCategoryOverrides, setCategoryOverride } from '../../composables/useCategories';
 import { getCategory } from '../../utils/auto-categorize';
 import { Category, CATEGORY_META } from '../../types/category';
@@ -229,7 +230,7 @@ async function reassignCategory(site: SiteEntry, category: Category) {
 }
 
 async function blockSite(domain: string) {
-  const blackList = (await storage.getValue(StorageParams.BLACK_LIST, [])) as string[];
+  const blackList = asArray<string>(await storage.getValue(StorageParams.BLACK_LIST, []));
   if (!blackList.includes(domain)) {
     blackList.push(domain);
     await storage.saveValue(StorageParams.BLACK_LIST, blackList);

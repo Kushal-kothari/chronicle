@@ -8,7 +8,7 @@ import { injectStorage } from './storage/inject-storage';
 import { useDailyIntervals } from './composables/useDailyIntervals';
 import { isLimitExceeded } from './services/limit-list';
 import { Tab } from './types/tab';
-import { useBlockPage } from './services/block-page';
+import { useBlockPage, redirectToBlockedSite } from './services/block-page';
 import { convertSummaryTimeToBadgeString } from './utils/converter';
 import { Settings } from './services/settings';
 import { useNotificationList } from './composables/useNotificationList';
@@ -38,12 +38,16 @@ async function trackTime() {
     if (isValidPage(activeTab)) {
       const activeDomain = extractHostname(activeTab!.url);
 
-      if ((await isInBlackList(activeDomain)) && (await canChangeBadge())) {
-        await useBadge({
-          tabId: activeTab?.id,
-          text: 'n/a',
-          color: BadgeColor.green,
-        });
+      if (await isInBlackList(activeDomain)) {
+        // Site is on the block list — hard-block it by redirecting the tab
+        // to the block page, and stop tracking time for it.
+        await closeOpenInterval();
+        await redirectToBlockedSite(
+          activeDomain,
+          activeTab!.url!,
+          activeTab?.id,
+          activeTab?.favIconUrl,
+        );
       } else {
         if (
           currentObj != null &&
